@@ -1,5 +1,8 @@
 name: Daily Workflow
 'on':
+  push:
+    branches:
+      - main
   schedule:
     - cron: 0 0 * * *
 jobs:
@@ -21,4 +24,4 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r INLPBJ_CICDSampleRepo/requirements.txt 
+          pip install -r INLPBJ_CICDSampleRepo/requirements.txt    
