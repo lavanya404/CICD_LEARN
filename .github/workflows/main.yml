@@ -1,0 +1,24 @@
+name: Daily Workflow
+'on':
+  schedule:
+    - cron: 0 0 * * *
+jobs:
+  run-on-all-os:
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r INLPBJ_CICDSampleRepo/requirements.txt 
