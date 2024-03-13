@@ -35,4 +35,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-results
-          path: pipeline_test/JunitReports/TESTS-*.xml
+          path: Test Data/Reports
