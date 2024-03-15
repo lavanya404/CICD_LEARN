@@ -28,11 +28,11 @@ jobs:
           pip install -r requirements.txt
       - name: Execute Behave tests
         run: |
-          cd feature
+          feature/OrangeHRMLogin.py
           behave
       - name: Upload Test Results
         if: success() || failure()
         uses: actions/upload-artifact@v3
         with:
           name: test-results
-          path: Report.xml
+          path: Test Data/Report.xml
