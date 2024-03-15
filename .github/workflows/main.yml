@@ -1,4 +1,4 @@
-name: Release_Pipeline_All_OS
+name: Release_Pipeline_CICD
 on:
   schedule:
     - cron: '0 0 * * *'
